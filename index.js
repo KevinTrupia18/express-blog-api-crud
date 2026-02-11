@@ -36,3 +36,17 @@ function destroy(req, res) {
 
     res.sendStatus(204);
 }
+
+
+
+const express = require("express");
+const application = express();
+
+app.use(express.json()); // BODY PARSER
+
+const postsRouter = require("./routes/posts");
+app.use("/posts", postsRouter);
+
+app.listen(3000, () => {
+    console.log("Server avviato");
+});
